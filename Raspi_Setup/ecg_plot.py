@@ -1,8 +1,7 @@
-import random
 from itertools import count
-import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
+from SerialRead import serRead
 
 plt.style.use('fivethirtyeight')
 
@@ -13,9 +12,13 @@ index = count()
 
 def animate(i):
     x_vals.append(next(index))
-    y_vals.append(random.randint(0, 5))
+    y_vals.append(serRead())
+
     plt.cla()
-    plt.plot(x_vals, y_vals)
+
+    plt.plot(x_vals, y_vals, label='ECG')
+    plt.legend(loc='upper left')
+    plt.tight_layout()
 
 ani = FuncAnimation(plt.gcf(), animate, interval=1000)
 
