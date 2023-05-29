@@ -18,6 +18,11 @@ def animate(i):
 
     plt.plot(x_vals, y_vals, label='ECG')
     plt.legend(loc='upper left')
+    
+    plt.title('ECG')
+    plt.xlabel('t')
+    plt.ylabel('BPM')
+
     plt.tight_layout()
 
 ani = FuncAnimation(plt.gcf(), animate, interval=1000)
