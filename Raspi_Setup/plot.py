@@ -10,20 +10,21 @@ y_vals = []
 
 index = count()
 
-fig, (ax1, ax2) = plt.subplots(nrows=2, ncols=1)
+#fig, (ax1, ax2) = plt.subplots(nrows=2, ncols=1)
 
 def animate(i):
+    
     x_vals.append(next(index))
     y_vals.append(serRead())
 
-    ax1.cla()
+    plt.cla()
 
-    ax1.plot(x_vals, y_vals, label='ECG')
-    ax1.legend(loc='upper left')
+    plt.plot(x_vals, y_vals, label='ECG')
+    plt.legend(loc='upper left')
     
-    ax1.set_title('ECG')
-    ax1.set_xlabel('t')
-    ax1.set_ylabel('BPM')
+    plt.set_title('ECG')
+    plt.set_xlabel('t')
+    plt.set_ylabel('BPM')
 
     plt.tight_layout()
 
